@@ -1,13 +1,22 @@
-import java.util.*;
+import java.util.Scanner;
+
 public class Ej01 {
-  public static void main(String args[]) {
-    Scanner sc = new Scanner(System.in);
-    System.out.println("Introduce tu edad: ");
-    int edad = sc.nextInt();
-    System.out.println("Introduce si tienes carnet: ");
-    boolean carnet= sc.nextBoolean();
-    if ((edad >= 18) && (edad <=65) && carnet)
-      System.out.println("Acceso permitido");
-    sc.close();
-  }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+    System.out.println("Introduce el numero de hijos");
+    int hijos = sc.nextInt();
+    int asignacion;
+    if (hijos < 0){
+        System.out.println("Error");
+    }
+    else{
+            asignacion = switch (hijos) {
+            case 0 -> asignacion = 0;
+            case 1 -> asignacion = 50;
+            case 2 -> asignacion = 75;
+            default -> asignacion = 100;
+         };
+        System.out.println("la asignacion familiar es " + asignacion + " euros");
+        }
+    }
 }
